@@ -1,0 +1,9 @@
+DELETE FROM record;
+DELETE FROM specialize;
+DELETE FROM doctor;
+DELETE FROM publicservant;
+DELETE FROM users;
+DELETE FROM discover;
+DELETE FROM disease;
+DELETE FROM country;
+DELETE FROM diseasetype;
