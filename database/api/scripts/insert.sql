@@ -24,8 +24,8 @@ INSERT INTO country VALUES("Italy", 60461826);
 
 INSERT INTO disease VALUES("Adenoviruses","Virus","Adenoviruses are medium-sized, nonenveloped viruses with an icosahedral nucleocapsid containing a double-stranded DNA genome", 0);
 INSERT INTO disease VALUES("Coxsackievirus","Virus","Coxsackieviruses are belong to the Picornaviridae family of nonenveloped, linear, positive-sense single-stranded RNA viruses", 1);
-INSERT INTO disease VALUES("Salmonella","Bacteria","Salmonella is a genus of rod-shaped Gram-negative bacteria of the family Enterobacteriaceae", 2);
-INSERT INTO disease VALUES("Bacillus","Bacteria","Bacillus is a genus of Gram-positive, rod-shaped bacteria, a member of the phylum Bacillota", 3);
+INSERT INTO disease VALUES("covid-19","bacteria","Salmonella is a genus of rod-shaped Gram-negative bacteria of the family Enterobacteriaceae", 2);
+INSERT INTO disease VALUES("Bacillus","bacteria","Bacillus is a genus of Gram-positive, rod-shaped bacteria, a member of the phylum Bacillota", 3);
 INSERT INTO disease VALUES("Yeasts","Fungi","Yeasts are eukaryotic, single-celled microorganisms classified as members of the fungus kingdom", 4);
 INSERT INTO disease VALUES("Molds","Fungi","A mold or mould is one of the structures certain fungi can form", 5);
 INSERT INTO disease VALUES("Fungi","Parasites","A fungus is any member of the group of eukaryotic organisms", 6);
@@ -35,7 +35,7 @@ INSERT INTO disease VALUES("Viruses","Parasites","A virus is a submicroscopic in
 
 INSERT INTO discover VALUES("USA", "Adenoviruses", "1910-01-01");
 INSERT INTO discover VALUES("Kazakhstan", "Coxsackievirus", "1920-01-01");
-INSERT INTO discover VALUES("Russia", "Salmonella", "1930-01-01");
+INSERT INTO discover VALUES("Russia", "covid-19", "1930-01-01");
 INSERT INTO discover VALUES("China", "Bacillus", "1940-01-01");
 INSERT INTO discover VALUES("India", "Yeasts", "1950-01-01");
 INSERT INTO discover VALUES("Japan", "Molds", "1960-01-01");
@@ -56,10 +56,10 @@ INSERT INTO users VALUES("i@gmail.com", "Karina", "Imaginary9", 900000, "+770000
 INSERT INTO users VALUES("j@gmail.com", "Ester", "Imaginary10", 1000000, "+77000000010", "Italy");
 INSERT INTO users VALUES("k@gmail.com", "Erasyl2", "Imaginary11", 1100000, "+77000000011", "USA");
 INSERT INTO users VALUES("l@gmail.com", "Timur2", "Imaginary12", 1200000, "+77000000012", "Kazakhstan");
-INSERT INTO users VALUES("m@gmail.com", "Ali2", "Imaginary13", 1300000, "+77000000013", "Kazakhstan");
-INSERT INTO users VALUES("n@gmail.com", "Ramazan2", "Imaginary14", 1400000, "+77000000014", "China");
-INSERT INTO users VALUES("o@gmail.com", "Samir2", "Imaginary15", 1500000, "+77000000015", "India");
-INSERT INTO users VALUES("p@gmail.com", "Anel2", "Imaginary16", 1600000, "+77000000016", "Japan");
+INSERT INTO users VALUES("m@gmail.com", "BekTest", "Imaginary13", 1300000, "+77000000013", "Kazakhstan");
+INSERT INTO users VALUES("n@gmail.com", "Beksssss", "Imaginary14", 1400000, "+77000000014", "China");
+INSERT INTO users VALUES("o@gmail.com", "gulAAA", "Imaginary15", 1500000, "+77000000015", "India");
+INSERT INTO users VALUES("p@gmail.com", "AAAGul", "Imaginary16", 1600000, "+77000000016", "Japan");
 INSERT INTO users VALUES("q@gmail.com", "Sat2", "Imaginary17", 1700000, "+77000000017", "Korea");
 INSERT INTO users VALUES("r@gmail.com", "Bexultan2", "Imaginary18", 1800000, "+77000000018", "United Kingdom");
 INSERT INTO users VALUES("s@gmail.com", "Karina2", "Imaginary19", 1900000, "+77000000019", "Turkey");
@@ -67,7 +67,7 @@ INSERT INTO users VALUES("t@gmail.com", "Ester2", "Imaginary20", 2000000, "+7700
 
 INSERT INTO publicservant VALUES("a@gmail.com", "Department 1");
 INSERT INTO publicservant VALUES("b@gmail.com", "Department 2");
-INSERT INTO publicservant VALUES("c@gmail.com", "Department 3");
+INSERT INTO publicservant VALUES("c@gmail.com", "Department 1");
 INSERT INTO publicservant VALUES("d@gmail.com", "Department 4");
 INSERT INTO publicservant VALUES("e@gmail.com", "Department 5");
 INSERT INTO publicservant VALUES("f@gmail.com", "Department 6");
@@ -105,9 +105,17 @@ INSERT INTO specialize VALUES(9 ,"s@gmail.com");
 INSERT INTO specialize VALUES(8 ,"t@gmail.com");
 INSERT INTO specialize VALUES(9 ,"t@gmail.com");
 
-INSERT INTO record VALUES("a@gmail.com", "USA", "Adenoviruses", 100000, 200000);
+INSERT INTO record VALUES("a@gmail.com", "USA", "covid-19", 100000, 200000);
+INSERT INTO record VALUES("a@gmail.com", "Kazakhstan", "covid-19", 100000, 200000);
+INSERT INTO record VALUES("a@gmail.com", "Russia", "covid-19", 100000, 200000);
+INSERT INTO record VALUES("a@gmail.com", "India", "covid-19", 100000, 200000);
+INSERT INTO record VALUES("a@gmail.com", "China", "covid-19", 100000, 200000);
+INSERT INTO record VALUES("b@gmail.com", "Japan", "covid-19", 200000, 300000);
+INSERT INTO record VALUES("b@gmail.com", "Turkey", "covid-19", 200000, 300000);
 INSERT INTO record VALUES("b@gmail.com", "Kazakhstan", "Coxsackievirus", 200000, 300000);
-INSERT INTO record VALUES("c@gmail.com", "Russia", "Salmonella", 300000, 400000);
+INSERT INTO record VALUES("c@gmail.com", "Russia", "covid-19", 300000, 400000);
+INSERT INTO record VALUES("c@gmail.com", "USA", "covid-19", 300000, 400000);
+INSERT INTO record VALUES("c@gmail.com", "Kazakhstan", "covid-19", 300000, 400000);
 INSERT INTO record VALUES("d@gmail.com", "China", "Bacillus", 400000, 500000);
 INSERT INTO record VALUES("e@gmail.com", "India", "Yeasts", 500000, 600000);
 INSERT INTO record VALUES("f@gmail.com", "Japan", "Molds", 600000, 700000);
@@ -115,3 +123,4 @@ INSERT INTO record VALUES("g@gmail.com", "Korea", "Fungi", 700000, 800000);
 INSERT INTO record VALUES("h@gmail.com", "United Kingdom", "Leeches", 800000, 900000);
 INSERT INTO record VALUES("i@gmail.com", "Turkey", "Lice", 900000, 1000000);
 INSERT INTO record VALUES("j@gmail.com", "Italy", "Viruses", 1000000, 1100000);
+

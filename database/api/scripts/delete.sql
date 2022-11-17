@@ -7,3 +7,14 @@ DELETE FROM discover;
 DELETE FROM disease;
 DELETE FROM country;
 DELETE FROM diseasetype;
+
+
+DROP TABLE record;
+DROP TABLE specialize;
+DROP TABLE doctor;
+DROP TABLE publicservant;
+DROP TABLE users;
+DROP TABLE discover;
+DROP TABLE disease;
+DROP TABLE country;
+DROP TABLE diseasetype;
