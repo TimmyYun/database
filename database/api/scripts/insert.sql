@@ -33,16 +33,16 @@ INSERT INTO disease VALUES("Leeches","Parasites","Leeches are segmented parasiti
 INSERT INTO disease VALUES("Lice","Parasites","Louse is the common name for any member of the clade Phthiraptera", 8);
 INSERT INTO disease VALUES("Viruses","Parasites","A virus is a submicroscopic infectious agent that replicates only inside the living cells of an organism", 9);
 
-INSERT INTO discover VALUES("USA", "1910-01-01", "Adenoviruses");
-INSERT INTO discover VALUES("Kazakhstan", "1920-01-01", "Coxsackievirus");
-INSERT INTO discover VALUES("Russia", "1930-01-01", "covid-19");
-INSERT INTO discover VALUES("China", "1940-01-01", "Bacillus");
-INSERT INTO discover VALUES("India", "1950-01-01", "Yeasts");
-INSERT INTO discover VALUES("Japan", "1960-01-01", "Molds");
-INSERT INTO discover VALUES("Korea", "1970-01-01", "Fungi");
-INSERT INTO discover VALUES("United Kingdom", "1980-01-01", "Leeches");
-INSERT INTO discover VALUES("Turkey", "1990-01-01", "Lice");
-INSERT INTO discover VALUES("Italy", "2000-01-01", "Viruses");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(0, "USA", "1910-01-01", "Adenoviruses");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(1, "Kazakhstan", "1920-01-01", "Coxsackievirus");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(2, "Russia", "1930-01-01", "covid-19");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(3, "China", "1940-01-01", "Bacillus");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(4, "India", "1950-01-01", "Yeasts");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(5, "Japan", "1960-01-01", "Molds");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(6, "Korea", "1970-01-01", "Fungi");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(7, "United Kingdom", "1980-01-01", "Leeches");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(8, "Turkey", "1990-01-01", "Lice");
+INSERT INTO discover (id, cname, first_enc_date, disease_code) VALUES(9, "Italy", "2000-01-01", "Viruses");
 
 INSERT INTO users VALUES("a@gmail.com", "Erasyl", "Imaginary1", 100000, "+77000000001", "USA");
 INSERT INTO users VALUES("b@gmail.com", "Timur", "Imaginary2", 200000, "+77000000002", "Kazakhstan");

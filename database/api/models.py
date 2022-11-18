@@ -29,8 +29,10 @@ class Disease(models.Model):
 
 
 class Discover(models.Model):
-    cname = models.OneToOneField(
-        Country, db_column='cname', blank=True, on_delete=models.CASCADE, primary_key=True)
+    id = models.IntegerField(auto_created=True, primary_key=True,
+                             serialize=True, verbose_name='ID', unique=True)    
+    cname = models.ForeignKey(
+        Country, db_column='cname', blank=True, null=True, on_delete=models.CASCADE)
     disease_code = models.ForeignKey(
         'Disease', db_column='disease_code', blank=True, null=True, on_delete=models.CASCADE)
     first_enc_date = models.DateField(blank=True, null=True)

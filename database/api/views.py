@@ -20,6 +20,8 @@ def getRoutes(request):
     routes = [
         {
             'diseasetype/',
+            'country/',
+            'disease/',
         }
     ]
     return Response(routes)
@@ -98,7 +100,7 @@ def getCountry(request, pk):
     Retrieve, update or delete a country.
     """
     try:
-        country = Country.objects.get(email=pk)
+        country = Country.objects.get(cname=pk)
     except Country.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -163,4 +165,52 @@ def getDisease(request, pk):
 
     if request.method == 'DELETE':
         disease.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# Discover
+
+
+@api_view(['GET', 'POST'])
+def getDiscovers(request):
+    """
+    List all dicovers, or create a new discover.
+    """
+    if request.method == 'GET':
+        discover = Discover.objects.all()
+        serializer = DiscoverSerializer(discover, many=True)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+        serializer = DiscoverSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def getDiscover(request, pk):
+    """
+    Retrieve, update or delete a discover.
+    """
+    try:
+        discover = Discover.objects.get(id=pk)
+    except Disease.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = DiscoverSerializer(discover, many=False)
+        return Response(serializer.data)
+
+    if request.method == 'PUT':
+        serializer = DiscoverSerializer(
+            instance=discover, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    if request.method == 'DELETE':
+        discover.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

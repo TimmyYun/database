@@ -22,3 +22,8 @@ class DiseaseSerializer(ModelSerializer):
     class Meta:
         model = Disease
         fields = '__all__'
+
+class DiscoverSerializer(ModelSerializer):
+    class Meta:
+        model = Discover
+        fields = '__all__'
