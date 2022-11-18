@@ -53,7 +53,7 @@ ninth_task = text("SELECT u.email, u.name, ps.department FROM users u LEFT JOIN 
 print(conn.execute(ninth_task, x='m', y='z',
       e1='%@aol.com', e2='%@msn.com').fetchall())
 
-tenth_task = text("SELECT c.cname, SUM(r.total_patients) AS Total FROM country c LEFT JOIN record r on c.cname = r.cname GROUP BY c.cname ORDER BY Total DESC")
+tenth_task = text("SELECT c.cname, SUM(r.total_patients) AS Total FROM country c LEFT JOIN record r on c.cname = r.cname GROUP BY c.cname ORDER BY Total DESC LIMIT 5;")
 
 print(conn.execute(tenth_task, x='m', y='z',
       e1='%@aol.com', e2='%@msn.com').fetchall())
