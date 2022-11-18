@@ -13,17 +13,26 @@ class DiseaseTypeSerializer(ModelSerializer):
         model = DiseaseType
         fields = '__all__'
 
+
 class CountrySerializer(ModelSerializer):
     class Meta:
         model = Country
         fields = '__all__'
+
 
 class DiseaseSerializer(ModelSerializer):
     class Meta:
         model = Disease
         fields = '__all__'
 
+
 class DiscoverSerializer(ModelSerializer):
     class Meta:
         model = Discover
+        fields = '__all__'
+
+
+class UsersSerializer(ModelSerializer):
+    class Meta:
+        model = Users
         fields = '__all__'

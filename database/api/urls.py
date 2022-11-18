@@ -21,8 +21,8 @@ urlpatterns = [
     path('discover/<str:pk>/', views.getDiscover, name="Discover"),
 
     #User
-    path('user/', views.getUsers, name="Users"),
-    path('user/<str:pk>/', views.getUser, name="User"),
+    # path('user/', views.getUsers, name="Users"),
+    # path('user/<str:pk>/', views.getUser, name="User"),
 
 
 ]

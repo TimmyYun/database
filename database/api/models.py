@@ -42,7 +42,9 @@ class Discover(models.Model):
 
 
 class Users(models.Model):
-    email = models.CharField(primary_key=True, max_length=60)
+    id = models.IntegerField(auto_created=True, primary_key=True,
+                             serialize=True, verbose_name='ID', unique=True)
+    email = models.CharField(max_length=60)
     name = models.CharField(max_length=30, blank=True, null=True)
     surname = models.CharField(max_length=40, blank=True, null=True)
     salary = models.IntegerField(blank=True, null=True)
