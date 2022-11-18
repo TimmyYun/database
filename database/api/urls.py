@@ -20,5 +20,9 @@ urlpatterns = [
     path('discover/', views.getDiscovers, name="Discovers"),
     path('discover/<str:pk>/', views.getDiscover, name="Discover"),
 
+    #User
+    path('user/', views.getUsers, name="Users"),
+    path('user/<str:pk>/', views.getUser, name="User"),
+
 
 ]
