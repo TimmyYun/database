@@ -12,5 +12,8 @@ urlpatterns = [
     path('country/', views.getCountries, name="Countries"),
     path('country/<str:pk>/', views.getCountry, name="Country"),
 
+    #Disease
+    path('disease/', views.getDiseases, name="Diseases"),
+    path('disease/<str:pk>/', views.getDisease, name="Disease"),
 
 ]

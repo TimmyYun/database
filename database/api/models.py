@@ -73,8 +73,8 @@ class Doctor(models.Model):
 class Specialize(models.Model):
     nid = models.IntegerField(auto_created=True, primary_key=True,
                               serialize=True, verbose_name='ID', unique=True)
-    id = models.OneToOneField(DiseaseType,
-                              db_column='id', blank=True, on_delete=models.CASCADE)
+    id = models.ForeignKey(DiseaseType,
+                           db_column='id', blank=True, null=True, on_delete=models.CASCADE)
     email = models.ForeignKey(
         Doctor, db_column='email', blank=True, null=True, on_delete=models.CASCADE)
 
@@ -83,8 +83,10 @@ class Specialize(models.Model):
 
 
 class Record(models.Model):
-    email = models.OneToOneField(
-        PublicServant, db_column='email', blank=True, on_delete=models.CASCADE, primary_key=True)
+    id = models.IntegerField(auto_created=True, primary_key=True,
+                             serialize=True, verbose_name='ID', unique=True)
+    email = models.ForeignKey(
+        PublicServant, db_column='email', blank=True, null=True, on_delete=models.CASCADE)
     cname = models.ForeignKey(
         Country, db_column='cname', blank=True, null=True, on_delete=models.CASCADE)
     disease_code = models.ForeignKey(

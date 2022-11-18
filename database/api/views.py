@@ -117,3 +117,50 @@ def getCountry(request, pk):
     if request.method == 'DELETE':
         country.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+# Disease
+
+
+@api_view(['GET', 'POST'])
+def getDiseases(request):
+    """
+    List all diseases, or create a new disease.
+    """
+    if request.method == 'GET':
+        disease = Disease.objects.all()
+        serializer = DiseaseSerializer(disease, many=True)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+        serializer = DiseaseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def getDisease(request, pk):
+    """
+    Retrieve, update or delete a disease.
+    """
+    try:
+        disease = Disease.objects.get(disease_code=pk)
+    except Disease.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = DiseaseSerializer(disease, many=False)
+        return Response(serializer.data)
+
+    if request.method == 'PUT':
+        serializer = DiseaseSerializer(
+            instance=disease, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    if request.method == 'DELETE':
+        disease.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

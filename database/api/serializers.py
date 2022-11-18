@@ -17,3 +17,8 @@ class CountrySerializer(ModelSerializer):
     class Meta:
         model = Country
         fields = '__all__'
+
+class DiseaseSerializer(ModelSerializer):
+    class Meta:
+        model = Disease
+        fields = '__all__'
