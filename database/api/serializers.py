@@ -36,3 +36,27 @@ class UsersSerializer(ModelSerializer):
     class Meta:
         model = Users
         fields = '__all__'
+
+
+class PublicServantSerializer(ModelSerializer):
+    class Meta:
+        model = PublicServant
+        fields = '__all__'
+
+
+class DoctorSerializer(ModelSerializer):
+    class Meta:
+        model = Doctor
+        fields = '__all__'
+
+
+class SpecializeSerializer(ModelSerializer):
+    class Meta:
+        model = Specialize
+        fields = '__all__'
+
+
+class RecordSerializer(ModelSerializer):
+    class Meta:
+        model = Record
+        fields = '__all__'
