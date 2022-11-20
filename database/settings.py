@@ -84,10 +84,15 @@ WSGI_APPLICATION = 'database.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 MAX_CONN_AGE = 600
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbf5530rer4nus',
+        'USER': 'lmwendgctpyyei',
+        'PASSWORD': '80c3dec5f1f1337c3b25cb8790dbb2814bfebde1886c48707aee1a6fecf8e0fb',
+        'HOST': 'ec2-54-174-31-7.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
