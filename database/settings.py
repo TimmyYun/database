@@ -35,9 +35,6 @@ else:
 if not IS_HEROKU:
     DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
