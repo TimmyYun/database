@@ -1,0 +1,22 @@
+{
+    "name": "Database project",
+    "description": "",
+    "image": "heroku/python",
+    "repository": "https://https://github.com/TimmyYun/database",
+    "keywords": ["python", "django" ],
+    "addons": [ "heroku-postgresql" ],
+    "env": {
+      "SECRET_KEY": {
+        "description": "django-insecure-46*qc-gp#*-^m3%^3u*7lh5m%i-_^0au^$(6uef-^s3df@fpt^",
+        "generator": "secret"
+      }
+    },
+    "environments": {
+      "test": {
+        "scripts": {
+          "test-setup": "python database/manage.py collectstatic --noinput",
+          "test": "python database/manage.py test"
+        }
+      }
+    }
+  }
