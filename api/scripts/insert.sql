@@ -1,5 +1,3 @@
-USE dev;
-
 INSERT INTO diseasetype VALUES (1, "acute disease is one of a short-term nature (acute)");
 INSERT INTO diseasetype VALUES (2, "chronic disease is one that persists over time");
 INSERT INTO diseasetype VALUES (3, "congenital disorder is one that is present at birth");
