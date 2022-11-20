@@ -22,7 +22,12 @@ def getRoutes(request):
             'diseasetype/',
             'country/',
             'disease/',
-            'users/'
+            'discover',
+            'user/',
+            'publicservant',
+            'doctor',
+            'specialize',
+            'record'
         }
     ]
     return Response(routes)
