@@ -13,12 +13,13 @@ CREATE TABLE country (
 );
 
 CREATE TABLE disease (
+    id BIGINT,
     disease_code VARCHAR(50),
     pathogen VARCHAR(20),
     description VARCHAR(140),
-    id INT,
+    disease_id INT,
     PRIMARY KEY(disease_code),
-    FOREIGN KEY (id) REFERENCES diseaseType(id)
+    FOREIGN KEY (disease_id) REFERENCES diseaseType(id)
 );
 
 CREATE TABLE discover(
@@ -30,6 +31,7 @@ CREATE TABLE discover(
 );
 
 CREATE TABLE users(
+    id BIGINT,
     email VARCHAR (60),
     name varchar (30),
     surname varchar (40),
@@ -41,25 +43,29 @@ CREATE TABLE users(
 );
 
 CREATE TABLE publicservant(
+    id BIGINT,
     email VARCHAR(60),
     department VARCHAR(50),
     FOREIGN KEY (email) REFERENCES users(email) ON DELETE CASCADE
 );
 
 CREATE TABLE doctor(
+    id BIGINT,    
     email VARCHAR (60),
     degree VARCHAR (20),
     FOREIGN KEY (email) REFERENCES users(email) ON DELETE CASCADE
 );
 
 CREATE TABLE specialize(
-    id INT,
+    id BIGINT,
+    disease_id INT,
     email VARCHAR (60),
-    FOREIGN KEY (id) REFERENCES diseasetype(id) ON DELETE CASCADE,
+    FOREIGN KEY (disease_id) REFERENCES diseasetype(id) ON DELETE CASCADE,
     FOREIGN KEY (email) REFERENCES doctor(email) ON DELETE CASCADE
 );
 
 CREATE TABLE record(
+    id BIGINT,    
     email VARCHAR (60),
     cname VARCHAR (50),
     disease_code VARCHAR(50),
